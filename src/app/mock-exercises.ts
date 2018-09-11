@@ -4,31 +4,31 @@ export const EXERCISES: Exercise[] = [
     {
         id: 1,
         name: 'Barbell Bench',
-        rest: 90
+        muscle: 'Chest'
     },
     {
         id: 2,
         name: 'Dumbbell Bench',
-        rest: 60
+        muscle: 'Chest'
     },
     {
         id: 3,
         name: 'Barbell Curls',
-        rest: 45
+        muscle: 'Biceps'
     },
     {
         id: 4,
         name: 'Dumbbell Curls',
-        rest: 60
+        muscle: 'Biceps'
     },
     {
         id: 5,
         name: 'Barbell Rows',
-        rest: 90
+        muscle: 'Back'
     },
     {
         id: 6,
         name: 'Dumbbell Rows',
-        rest: 45
+        muscle: 'Back'
     },
 ];
