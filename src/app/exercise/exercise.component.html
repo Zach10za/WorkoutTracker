@@ -1,16 +1,14 @@
-<div id="selected-cards-container" class="cards-container cards-container-selected">
-  <div *ngFor="let exercise of selectedExercises" class="card" (click)="removeExercise(exercise)" [@fold]>
+<div id="selected-cards-container" class="cards-container">
+  <div *ngFor="let exercise of exercises"
+    class="card" 
+    [ngClass]="{'align-start': exercise.isSelected}" 
+    [ngStyle]="{'top.px': exercise.top}">
     <div class="card-header">{{ exercise.name }}</div>
     <div class="card-body">
-      {{ exercise.muscle }}
-    </div>
-  </div>
-</div>
-<div class="cards-container">
-  <div *ngFor="let exercise of exercises" class="card" (click)="selectExercise(exercise)" [@fold]>
-    <div class="card-header">{{ exercise.name }}</div>
-    <div class="card-body">
-      {{ exercise.muscle }}
+        <a href="#/" id="selectCard" class="card-btn card-btn-select" (click)="selectExercise($event,exercise)" *ngIf="!exercise.isSelected">+</a>
+        <a href="#/" id="removeCard" class="card-btn card-btn-remove" (click)="selectExercise($event,exercise)" *ngIf="exercise.isSelected">-</a>
+        <a href="#/" class="card-btn card-btn-move" (click)="moveSelectedExercise($event, exercise, 'up')" *ngIf="exercise.isSelected">/\</a>
+        <a href="#/" class="card-btn card-btn-move" (click)="moveSelectedExercise($event, exercise, 'down')" *ngIf="exercise.isSelected">\/</a>
     </div>
   </div>
 </div>
